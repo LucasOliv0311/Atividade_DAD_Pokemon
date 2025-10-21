@@ -4,3 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+
+body{
+  background-color: var(--primary-color);
+  color: #2C341B;
+}
+
+:root{
+  --primary-color: #97ac82;
+  --secondary-color: #2c341b;
+  --tertiary-color: #688a65;
+  --quaternary-color: #cfd2a6;
+  --quinary-color: #b2b48f;
+}
