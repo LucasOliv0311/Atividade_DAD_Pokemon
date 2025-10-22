@@ -3,6 +3,7 @@ import styles from './form.module.css';
 
 function Form({ onSubmit }) {
   const [name, setName] = useState("");
+  const [image, setImage] = useState("");
   const [type, setType] = useState("");
   const [power, setPower] = useState(0);
 
@@ -11,6 +12,7 @@ function Form({ onSubmit }) {
 
     const newPokemon = {
       name,
+      image,
       type,
       power: Number(power)
     };
@@ -20,6 +22,7 @@ function Form({ onSubmit }) {
     alert("Pokémon cadastrado!");
 
     setName("");
+    setImage("");
     setType("");
     setPower(0);
   }
@@ -37,6 +40,18 @@ function Form({ onSubmit }) {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+
+      <div className={styles.fieldContainer}>
+        <span>Imagem:</span>
+        <input
+          type="text"
+          placeholder="Imagem (URL)"
+          className={styles.field}
+          required
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
         />
       </div>
 
