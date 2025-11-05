@@ -7,6 +7,7 @@ function Card({ pokemon }) {
       <img src={pokemon.image} alt={pokemon.name} />
       <p>Tipo - <i><strong>{pokemon.type}</strong></i></p>
       <p>Poder - <i><strong>{pokemon.power}</strong></i></p>
+      <p>Descrição - <i><strong>{pokemon.description}</strong></i></p>
     </div>
   );
 }

@@ -5,6 +5,7 @@ function Form({ onSubmit }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [type, setType] = useState("");
+  const [description, setDescription] = useState("");
   const [power, setPower] = useState(0);
 
   function submit(e) {
@@ -14,7 +15,8 @@ function Form({ onSubmit }) {
       name,
       image,
       type,
-      power: Number(power)
+      power: Number(power),
+      description: description
     };
 
     onSubmit(newPokemon);
@@ -24,6 +26,7 @@ function Form({ onSubmit }) {
     setName("");
     setImage("");
     setType("");
+    setDescription("");
     setPower(0);
   }
 
@@ -86,6 +89,18 @@ function Form({ onSubmit }) {
           value={power}
           onChange={(e) => setPower(e.target.value)}
         />
+      </div>
+
+      <div className={styles.fieldContainer}>
+        <span>Descrição:</span>
+        <textarea
+          placeholder="Descrição..."
+          className={styles.descField}
+          required
+          rows={4}
+          value={description}
+          onChange={(e) => {setDescription(e.target.value)}}
+        ></textarea>
       </div>
 
       <button type="submit" className={styles.button}>
